@@ -2,36 +2,47 @@
 document.addEventListener('DOMContentLoaded', function() {
   const navbarToggler = document.querySelector('.navbar-toggler');
   const navbarNav = document.querySelector('.navbar-nav');
-  
-  navbarToggler.addEventListener('click', function() {
-    navbarNav.classList.toggle('show');
-    
-    // Animate hamburger icon
-    const spans = this.querySelectorAll('.hamburger span');
-    if (navbarNav.classList.contains('show')) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(7px, -8px)';
-      spans[3].style.opacity = '0';
+  const hamburgerSpans = navbarToggler.querySelectorAll('.hamburger span');
+
+  const updateHamburger = isOpen => {
+    if (isOpen) {
+      hamburgerSpans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      hamburgerSpans[1].style.opacity = '0';
+      hamburgerSpans[2].style.transform = 'rotate(-45deg) translate(7px, -8px)';
+      hamburgerSpans[3].style.opacity = '0';
     } else {
-      spans.forEach(span => {
+      hamburgerSpans.forEach(span => {
         span.style.transform = '';
         span.style.opacity = '';
       });
     }
+  };
+
+  const setMenuState = isOpen => {
+    navbarNav.classList.toggle('show', isOpen);
+    navbarToggler.setAttribute('aria-expanded', isOpen.toString());
+    updateHamburger(isOpen);
+  };
+
+  setMenuState(navbarNav.classList.contains('show'));
+
+  navbarToggler.addEventListener('click', function() {
+    const isOpen = !navbarNav.classList.contains('show');
+    setMenuState(isOpen);
   });
   
   // Close mobile menu when clicking on a link
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-      navbarNav.classList.remove('show');
-      // Reset hamburger icon
-      const spans = document.querySelectorAll('.hamburger span');
-      spans.forEach(span => {
-        span.style.transform = '';
-        span.style.opacity = '';
-      });
+      setMenuState(false);
     });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navbarNav.classList.contains('show')) {
+      setMenuState(false);
+      navbarToggler.focus();
+    }
   });
   
   // Smooth scrolling for navigation links
