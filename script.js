@@ -120,7 +120,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // Image lazy loading
 document.addEventListener('DOMContentLoaded', function() {
   const lazyImages = document.querySelectorAll('img[data-src]');
-  
+
+  if (!('IntersectionObserver' in window)) {
+    lazyImages.forEach(img => {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    });
+    return;
+  }
+
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -131,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
+
   lazyImages.forEach(img => {
     imageObserver.observe(img);
   });
