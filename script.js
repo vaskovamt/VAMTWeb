@@ -90,6 +90,141 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  const newScrollGallery = document.querySelector('.new-scroll-gallery');
+  if (newScrollGallery) {
+    const newCarousel = document.querySelector('.new-carousel');
+    const newScrollCards = Array.from(newScrollGallery.querySelectorAll('.new-scroll-card'));
+    const prevButton = document.querySelector('.new-carousel-prev');
+    const nextButton = document.querySelector('.new-carousel-next');
+    const carouselCount = document.querySelector('.new-carousel-count');
+    const carouselDots = Array.from(document.querySelectorAll('.new-carousel-dot'));
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (newScrollCards.length > 1) {
+      let currentIndex = 0;
+      let autoplayTimer;
+      let isPointerInside = false;
+      let isFocusInside = false;
+
+      const updateCarouselStatus = () => {
+        if (carouselCount) {
+          carouselCount.textContent = `${currentIndex + 1}/${newScrollCards.length}`;
+        }
+
+        carouselDots.forEach((dot, index) => {
+          const isActive = index === currentIndex;
+          dot.classList.toggle('is-active', isActive);
+          dot.toggleAttribute('aria-current', isActive);
+        });
+      };
+
+      const showCard = index => {
+        currentIndex = (index + newScrollCards.length) % newScrollCards.length;
+        newScrollGallery.scrollTo({
+          left: currentIndex * newScrollGallery.clientWidth,
+          behavior: 'smooth'
+        });
+        updateCarouselStatus();
+      };
+
+      const stopAutoplay = () => {
+        window.clearInterval(autoplayTimer);
+      };
+
+      const startAutoplay = () => {
+        stopAutoplay();
+        if (reducedMotionQuery.matches || isPointerInside || isFocusInside) {
+          return;
+        }
+
+        autoplayTimer = window.setInterval(() => {
+          showCard(currentIndex + 1);
+        }, 3000);
+      };
+
+      prevButton?.addEventListener('click', () => {
+        showCard(currentIndex - 1);
+        startAutoplay();
+      });
+
+      nextButton?.addEventListener('click', () => {
+        showCard(currentIndex + 1);
+        startAutoplay();
+      });
+
+      carouselDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showCard(index);
+          startAutoplay();
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        newScrollGallery.scrollTo({
+          left: currentIndex * newScrollGallery.clientWidth,
+          behavior: 'auto'
+        });
+      });
+
+      newCarousel?.addEventListener('mouseenter', () => {
+        isPointerInside = true;
+        stopAutoplay();
+      });
+
+      newCarousel?.addEventListener('mouseleave', () => {
+        isPointerInside = false;
+        startAutoplay();
+      });
+
+      newCarousel?.addEventListener('focusin', () => {
+        isFocusInside = true;
+        stopAutoplay();
+      });
+
+      newCarousel?.addEventListener('focusout', () => {
+        window.setTimeout(() => {
+          isFocusInside = newCarousel.contains(document.activeElement);
+          startAutoplay();
+        }, 0);
+      });
+
+      reducedMotionQuery.addEventListener('change', () => {
+        if (reducedMotionQuery.matches) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      });
+
+      updateCarouselStatus();
+      startAutoplay();
+    }
+  }
+
+  const wholesaleForm = document.querySelector('.wholesale-form');
+  if (wholesaleForm) {
+    wholesaleForm.addEventListener('submit', event => {
+      event.preventDefault();
+
+      const formData = new FormData(wholesaleForm);
+      const fields = [
+        ['Име', 'client_name'],
+        ['Фирма / обект', 'company'],
+        ['Телефон или имейл', 'contact'],
+        ['Тип запитване', 'inquiry_type'],
+        ['Продукт', 'product'],
+        ['Желано количество', 'quantity'],
+        ['Съобщение', 'message']
+      ];
+
+      const body = fields
+        .map(([label, key]) => `${label}: ${formData.get(key) || '-'}`)
+        .join('\n');
+
+      window.location.href = `mailto:vamt@abv.bg?subject=${encodeURIComponent('Запитване за количества и едро')}&body=${encodeURIComponent(body)}`;
+    });
+  }
+
   // Animation on scroll
   const animateOnScroll = function() {
     const elements = document.querySelectorAll('.gallery-item, .contact-card, .full-width-image, .feature-item, .new-container');

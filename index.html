@@ -56,7 +56,7 @@
     "@context": "https://schema.org",
     "@type": "IceCreamShop",
     "name": "Сладоледи ВАМТ",
-    "image": "https://sladoledivamt.com/images/shop.jpg",
+    "image": "https://sladoledivamt.com/images/social-preview.jpg",
     "@id": "https://sladoledivamt.com",
     "url": "https://sladoledivamt.com",
     "telephone": "+359878938073",
@@ -115,6 +115,8 @@
         <li class="nav-item"><a class="nav-link" href="#icecreams">Сладоледи</a></li>
         <li class="nav-item"><a class="nav-link" href="#new">Ново</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Контакти</a></li>
+        <li class="nav-item mobile-menu-only"><a class="nav-link" href="mailto:vamt@abv.bg"><i class="fas fa-envelope"></i> Имейл</a></li>
+        <li class="nav-item mobile-menu-only"><a class="nav-link" href="https://www.facebook.com/vamt.d.ivanov" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></li>
       </ul>
       
       <div class="icons-menu">
@@ -124,10 +126,10 @@
         <a class="iconfont-wrapper" href="tel:+359 87 893 8073" aria-label="Phone">
           <i class="fas fa-phone"></i>
         </a>
-        <a class="iconfont-wrapper" href="mailto:vamt@abv.bg" aria-label="Email">
+        <a class="iconfont-wrapper hide-on-mobile" href="mailto:vamt@abv.bg" aria-label="Email">
           <i class="fas fa-envelope"></i>
         </a>
-        <a class="iconfont-wrapper" href="https://www.facebook.com/vamt.d.ivanov" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <a class="iconfont-wrapper hide-on-mobile" href="https://www.facebook.com/vamt.d.ivanov" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </div>
@@ -141,14 +143,26 @@
         <div class="home-image">
           <h1><i>Добре дошли в Сладоледи ВАМТ</i></h1>
           <p class="tagline">Едно ледено удоволствие</p>
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/shop.jpg" alt="Сладоледи ВАМТ" class="hero-image" loading="lazy">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/shop-1200.webp" alt="Сладоледи ВАМТ" class="hero-image" loading="lazy">
           <div class="hero-cta-group">
             <a href="#icecreams" class="cta-button">Вижте нашите сладоледи</a>
             <a href="tel:+359878938073" class="cta-button cta-button-secondary">Обади се сега</a>
           </div>
+          <div class="hero-trust-strip" aria-label="Защо да изберете Сладоледи ВАМТ">
+            <span><i class="fas fa-history"></i> От 1990</span>
+            <span><i class="fas fa-map-marker-alt"></i> Пазарджик</span>
+            <span><i class="fas fa-heart"></i> Домашни рецепти</span>
+            <span><i class="fas fa-boxes"></i> Едро и количества</span>
+          </div>
         </div>
         <div class="map-container-home">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.065734934003!2d24.3343528!3d42.187669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acbaaaf9171dfd%3A0x516829f8cba2673d!2sVAMT_ice_creams!5e0!3m2!1sen!2sbg!4v1620000000000!5m2!1sen!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.065734934003!2d24.3343528!3d42.187669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acbaaaf9171dfd%3A0x516829f8cba2673d!2sVAMT_ice_creams!5e0!3m2!1sen!2sbg!4v1620000000000!5m2!1sen!2sbg"
+            title="Карта до Сладоледи ВАМТ"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </div>
@@ -157,33 +171,56 @@
   <!-- About Us Section -->
   <section id="about">
     <div class="container">
-      <h2>За Нас</h2>
-      
+      <p class="section-kicker">Семейна история</p>
+      <h2>За нас</h2>
+      <p class="section-subtitle">Домашен вкус от Пазарджик, пазен и предаван от 1990 година.</p>
+
       <div class="about-container">
         <div class="about-content">
-
-          <div class="features">
-            <div class="feature-item">
-              <i class="fas fa-heart"></i>
-              <h3>С любов</h3>
-              <p>Приготвени с грижа и внимание</p>
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-award"></i>
-              <h3>Високо качество</h3>
-              <p>Най-добрите съставки</p>
-            </div>
-          </div>
+          <span class="about-year">от 1990</span>
+          <h3>Малко магазинче, голяма любов към сладоледа</h3>
           <p>
             Сладоледи ВАМТ е основан през 1990 година в град Пазарджик и започва като малко семейно магазинче, предлагащо
             богат асортимент от домашно приготвени сладоледи. Наша мисия е предаването на рецептата от поколение на
             поколение, за да се запази автентичния вкус на щастливото детство. Днес, Сладоледи ВАМТ продължава да радва клиентите си с още по-голямо разнообразие от вносни и домашно приготвени сладоледи.
-          </p>                
-          <!-- <a href="#contact" class="cta-button">Посетете ни</a> -->
+          </p>
+          <div class="about-highlights" aria-label="Основни предимства">
+            <div class="about-highlight">
+              <strong>30+</strong>
+              <span>години традиция</span>
+            </div>
+            <div class="about-highlight">
+              <strong>100%</strong>
+              <span>семейна грижа</span>
+            </div>
+            <div class="about-highlight">
+              <strong>Всеки ден</strong>
+              <span>пресен избор</span>
+            </div>
+          </div>
+          <a href="#icecreams" class="cta-button about-button">Вижте сладоледите</a>
         </div>
         
         <div class="about-image">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/handcone.jpg" alt="Ръка държаща сладолед" class="about-img" loading="lazy">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/about-cone.jpg" alt="Ръка държаща сладолед пред магазина" class="about-img" loading="lazy">
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature-item">
+          <i class="fas fa-heart"></i>
+          <h3>С любов</h3>
+          <p>Приготвени с грижа и внимание</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-award"></i>
+          <h3>Високо качество</h3>
+          <p>Подбрани съставки и постоянен вкус</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-store"></i>
+          <h3>Местен дух</h3>
+          <p>Семейно място в сърцето на Пазарджик</p>
         </div>
       </div>
     </div>
@@ -197,41 +234,48 @@
       
       <div class="gallery-grid">
         <div class="gallery-item">
-          <a href="products/SLadoledche 0,200.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="products/SLadoledche 0,200.pdf" target="_blank" rel="noopener noreferrer" aria-label="Виж каталог 0,200L">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/0.200-816x1154.jpg" alt="0.200L" class="gallery-img" loading="lazy">
-            <span class="flavor-name">0.200L</span>
+            <span class="flavor-name">Виж каталог 0,200L</span>
           </a>
         </div>
         <div class="gallery-item">
-          <a href="products/SLadoledche 0,400.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="products/SLadoledche 0,400.pdf" target="_blank" rel="noopener noreferrer" aria-label="Виж каталог 0,400L">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/0.400-816x1154.jpg" alt="0.400L" class="gallery-img" loading="lazy">
-            <span class="flavor-name">0.400L</span>
+            <span class="flavor-name">Виж каталог 0,400L</span>
           </a>
         </div>
         <div class="gallery-item">
-          <a href="products/SLadoledche 1.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="products/SLadoledche 1.pdf" target="_blank" rel="noopener noreferrer" aria-label="Виж каталог 1L">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/1-816x1154.jpg" alt="1L" class="gallery-img" loading="lazy">
-            <span class="flavor-name">1L</span>
+            <span class="flavor-name">Виж каталог 1L</span>
           </a>
         </div>
         <div class="gallery-item">
-          <a href="products/SLadoledche 4.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="products/SLadoledche 4.pdf" target="_blank" rel="noopener noreferrer" aria-label="Виж каталог 4L">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/4-816x1154.jpg" alt="4L" class="gallery-img" loading="lazy">
-            <span class="flavor-name">4L</span>
+            <span class="flavor-name">Виж каталог 4L</span>
           </a>
         </div>
         <div class="gallery-item">
-          <a href="products/SLadoledche 5.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="products/SLadoledche 5.pdf" target="_blank" rel="noopener noreferrer" aria-label="Виж каталог 5L">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/5-816x1154.jpg" alt="5L" class="gallery-img" loading="lazy">
-            <span class="flavor-name">5L</span>
+            <span class="flavor-name">Виж каталог 5L</span>
           </a>
         </div>
         <div class="gallery-item">
-          <a href="products/SLadoledche 16.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="products/SLadoledche 16.pdf" target="_blank" rel="noopener noreferrer" aria-label="Виж каталог 16L">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/16-816x1154.jpg" alt="16L" class="gallery-img" loading="lazy">
-            <span class="flavor-name">16L</span>
+            <span class="flavor-name">Виж каталог 16L</span>
           </a>
         </div>
+      </div>
+
+      <div class="karil-catalog">
+        <a href="https://karil-bg.com/" target="_blank" rel="noopener noreferrer" aria-label="Отворете каталога на Карил" class="karil-catalog-button">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/karil.png" alt="Карил" class="karil-logo" loading="lazy">
+          <span class="karil-button-text">Каталог Карил</span>
+        </a>
       </div>
       
       <div class="full-width-image">
@@ -248,6 +292,47 @@
     <div class="container">
       <h2>Ново в Сладоледи ВАМТ</h2>
       <p class="section-subtitle">Опитайте нашите нови предложения</p>
+
+      <div class="new-carousel" aria-label="Галерия с нови предложения">
+        <button type="button" class="new-carousel-arrow new-carousel-prev" aria-label="Предишен продукт">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="new-scroll-gallery">
+          <article class="new-scroll-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/new-ice/dubai-chocolate.webp" alt="Дубай шоколад" loading="lazy">
+            <span>Дубай шоколад</span>
+          </article>
+          <article class="new-scroll-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/new-ice/new-ice-01.webp" alt="Protein Super Red Velvet" loading="lazy">
+            <span>Protein Super Red Velvet</span>
+          </article>
+          <article class="new-scroll-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/new-ice/new-ice-02.webp" alt="Паляцо Виолет" loading="lazy">
+            <span>Паляцо Виолет</span>
+          </article>
+          <article class="new-scroll-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/new-ice/new-ice-03.webp" alt="Karil Bonus ананас" loading="lazy">
+            <span>Karil Bonus ананас</span>
+          </article>
+          <article class="new-scroll-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/new-ice/new-ice-04.webp" alt="Шекер памук" loading="lazy">
+            <span>Шекер памук</span>
+          </article>
+        </div>
+        <button type="button" class="new-carousel-arrow new-carousel-next" aria-label="Следващ продукт">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="new-carousel-status" aria-live="polite">
+          <span class="new-carousel-count">1/5</span>
+          <div class="new-carousel-dots" aria-label="Избор на продукт">
+            <button type="button" class="new-carousel-dot is-active" aria-label="Покажи продукт 1" aria-current="true"></button>
+            <button type="button" class="new-carousel-dot" aria-label="Покажи продукт 2"></button>
+            <button type="button" class="new-carousel-dot" aria-label="Покажи продукт 3"></button>
+            <button type="button" class="new-carousel-dot" aria-label="Покажи продукт 4"></button>
+            <button type="button" class="new-carousel-dot" aria-label="Покажи продукт 5"></button>
+          </div>
+        </div>
+      </div>
       
       <div class="new-container">
         <div class="new-content">
@@ -259,7 +344,7 @@
         </div>
         
         <div class="new-image">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/Cakes.jpg" alt="Сладоледени торти" loading="lazy">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="images/Cakes-900.webp" alt="Сладоледени торти" loading="lazy">
         </div>
       </div>
       
@@ -313,6 +398,51 @@
         <a href="https://www.instagram.com/sladoledi.vamt.eood/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
+      </div>
+
+      <div class="wholesale-form-wrap">
+        <h3>Запитване за количества и поръчки на едро</h3>
+        <p>За магазини, заведения, събития и по-големи заявки.</p>
+
+        <form class="wholesale-form" action="mailto:vamt@abv.bg" method="post" enctype="text/plain">
+          <div class="form-grid">
+            <label>
+              <span>Име</span>
+              <input type="text" name="client_name" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Фирма / обект</span>
+              <input type="text" name="company" autocomplete="organization">
+            </label>
+            <label>
+              <span>Телефон или имейл</span>
+              <input type="text" name="contact" autocomplete="email" required>
+            </label>
+            <label>
+              <span>Тип запитване</span>
+              <select name="inquiry_type" required>
+                <option value="">Изберете</option>
+                <option value="Поръчка на едро">Поръчка на едро</option>
+                <option value="Количество за магазин">Количество за магазин</option>
+                <option value="Събитие">Събитие</option>
+                <option value="Доставка / партньорство">Доставка / партньорство</option>
+              </select>
+            </label>
+            <label>
+              <span>Продукт</span>
+              <input type="text" name="product" placeholder="Напр. 4L, торта">
+            </label>
+            <label>
+              <span>Желано количество</span>
+              <input type="text" name="quantity" placeholder="Напр. 12 бр.">
+            </label>
+          </div>
+          <label class="form-message">
+            <span>Съобщение</span>
+            <textarea name="message" rows="5" placeholder="Опишете какво ви е необходимо"></textarea>
+          </label>
+          <button type="submit" class="cta-button">Изпрати запитване</button>
+        </form>
       </div>
     </div>
   </section>
